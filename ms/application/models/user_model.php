@@ -5,6 +5,16 @@ class User_model extends CI_Model {
     {
         parent::__construct();
     }
+
+    function getuserData($userid){
+
+        // you would put that query here and return the results to the controller we setup earlier
+        $query = $this->db->query('SELECT income, expense FROM data');
+
+        return $query->results();
+
+    }
+
 	function login($email,$password)
     {
 		$this->db->where("email",$email);

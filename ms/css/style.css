@@ -153,6 +153,15 @@ input{
 .data label{
 	text-align: right;
 }
+p .logout {
+    color: #fff;
+}
+.result {
+    margin-top: 50px;
+}
+.data input{
+	border: 1px solid black;
+}
 /*#footer{
 	padding-top: 70px;
 	margin-top: 70px;

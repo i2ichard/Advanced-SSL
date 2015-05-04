@@ -21,20 +21,19 @@ class User extends CI_Controller{
 	public function welcome()
 	{
 		$data['title']= 'Money$mart';
-		$data['var1'] = '2';
-		$data['var2'] = '8';
 
-		$this->load->model('math');
-		$data['subTotal'] = $this->math->sub($data['var1'], $data['var2']);
-		
 		$this->load->view('header_view',$data);
 		$this->load->view('welcome_view.php', $data);
 		$this->load->view('footer_view',$data);
-		
-
-		
-
+		$this->getValues();
 	}
+
+   public function getValues()
+   {
+        $this->load->model("get");
+		$this->get->getAll();
+   }
+
 	public function login()
 	{
 		$email=$this->input->post('email');
@@ -44,13 +43,14 @@ class User extends CI_Controller{
 		if($result) $this->welcome();
 		else        $this->index();
 	}
+
 	public function thank()
 	{
 		$data['title']= 'Thank you';
 		$this->load->view('header_view',$data);
 		$this->load->view('thank_view.php', $data);
 		$this->load->view('footer_view',$data);
-	}
+	} 
 	public function registration()
 	{
 		$this->load->library('form_validation');
@@ -70,6 +70,7 @@ class User extends CI_Controller{
 			$this->thank();
 		}
 	}
+
 	public function logout()
 	{
 		$newdata = array(
