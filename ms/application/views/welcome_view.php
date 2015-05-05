@@ -2,7 +2,7 @@
 
 <div class="content">
 	<div class="signup_wrap">
-	<div class="logo">Money$mart</div>
+	<div class="logo"><?php echo anchor('user/welcome', 'Money$mart'); ?></div>
 	<div class="signin_form">
 		<p class="logout"><?php echo anchor('user/logout', 'Logout'); ?></p>
 	</div><!--<div class="signin_form">-->
@@ -17,7 +17,7 @@
 		</div>
 		<div class="col-lg-3 col-lg-offset-4 data">
 		<?php
-		echo form_open();
+		echo form_open('calc/addition');
 
 		echo "<p>Fixed Income: </p>";
 		echo "<p>";
@@ -25,6 +25,11 @@
 		echo "</p>";
 
 		echo "<p>Fixed Expense: </p>";
+		echo "<p>";
+		echo form_input('expense');
+		echo "</p>";
+
+		echo "<p>Additional Expense: </p>";
 		echo "<p>";
 		echo form_input('expense');
 		echo "</p>";
@@ -38,7 +43,9 @@
 		<div class="col-lg-3 col-lg-offset-2 result">
 
 			<?php
-			echo 'Income:' . ;
+			echo 'Income:' ;
+			echo '<br/>';
+			echo 'Expense:' ;
 
 			?>
 		</div>

@@ -45,6 +45,13 @@ body{
 	float: left;
 	font-size: 1.5em;
 }
+.logo a{
+	text-decoration: none;
+	color: #fff;
+}
+.logo a:hover{
+	color: rgb(200, 200, 200);
+}
 .tagline{
 	margin-left: 40px;
 	font-family: 'Quicksand', sans-serif;
@@ -153,8 +160,12 @@ input{
 .data label{
 	text-align: right;
 }
-p .logout {
+.logout a {
     color: #fff;
+    text-decoration: none;
+}
+.logout a:hover{
+	color: rgb(200, 200, 200);
 }
 .result {
     margin-top: 50px;
