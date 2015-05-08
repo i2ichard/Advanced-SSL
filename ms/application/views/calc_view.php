@@ -18,39 +18,44 @@
 				<li>User Option</li>
 			</ul>
 		</div>
-		<div class="col-lg-3 col-lg-offset-4 data">
+		<div class="col-lg-4 col-lg-offset-3 data">
 		<?php
-		echo form_open();
+		echo form_open('calc/insertValues');
 
-		echo "<p>Fixed Income: </p>";
-		echo "<p>";
-		echo form_input('income');
-		echo "</p>";
-
-		echo "<p>Fixed Expense: </p>";
-		echo "<p>";
-		echo form_input('expense');
-		echo "</p>";
-
-		echo "<p>Additional Expense: </p>";
-		echo "<p>";
-		echo form_input('expense');
-		echo "</p>";
-
-		echo form_submit('calculate', 'Calculate');
+		echo form_label('Fixed Income :');
+		echo "<br/>";
+		echo form_input(array('class' => 'input', 'name' => 'income'));
+		echo "<br/>";
+		echo form_label('Fixed Expense :');
+		echo "<br/>";
+		echo form_input(array('class' => 'input', 'name' => 'expense'));
+		echo "<br/>";
+		echo form_label('Additional Expense :');
+		echo "<br/>";
+		echo form_input(array('class' => 'input', 'name' => 'additional'));
+		echo "<br/><br/>";
+		echo form_submit(array('class' => 'btn btn-success', 'value' => 'Calculate'));
 		echo form_close();
 
 		?>
 
 		</div>
-		<div class="col-lg-3 col-lg-offset-2 result">
+		<div class="col-lg-4 col-lg-offset-1 result">
+		
 			
-			<p>Income: <?php echo $add; ?></p>
-			<p>Expense: <?php echo $sub; ?></p>
+
+			<?php foreach($posts as $post){?>
+
+			<p>Income: <?php echo $post->income;?></p>
+			<p>Expense: <?php echo $post->expense;?></p>
+			
+			<?php }?>
+
+
 			
 		</div>
 	</div>
 		
 	
 
-</div><!--<div class="content">-->
+</div><!--<div class="content">
